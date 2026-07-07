@@ -80,3 +80,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+const emailLink = document.getElementById("copyEmail");
+
+emailLink.addEventListener("click", function (event) {
+
+    event.preventDefault();
+
+    const email = "prathmeshphadtare1@gmail.com";
+
+    navigator.clipboard.writeText(email).then(() => {
+
+        const originalText = emailLink.textContent;
+
+        emailLink.textContent = "✓ Email Copied!";
+
+        setTimeout(() => {
+
+            emailLink.textContent = originalText;
+
+        }, 2000);
+
+    });
+
+});
